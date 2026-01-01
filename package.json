@@ -1,0 +1,13 @@
+{
+  "name": "codewithstu-linktree",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/fetch-videos.js",
+    "optimize-images": "node scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where:*)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(npm install:*)",
+      "Bash(npm run optimize-images:*)",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)"
+    ]
+  }
+}

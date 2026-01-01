@@ -1,162 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="robots" content="index, follow">
-    <title>CodeWithStu.tv</title>
-    <meta name="description" content="I help #dotnet & #devops engineers expand their knowledge with tips, tricks and tutorials | Videos @ http://codewithstu.tv | Blog @ http://im5tu.io">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>CodeWithStu.tv - Stuart Blackler</title>
+    <meta name="description" content="I help .NET and DevOps engineers expand their knowledge with tips, tricks and tutorials. Videos, blog posts, and more.">
     <link rel="canonical" href="https://codewithstu.tv">
     <link rel="shortcut icon" href="https://im5tu.io/favicon.ico">
-    <meta property="og:image" content="https://im5tu.io/img/profile.png">
+    <meta property="og:title" content="CodeWithStu.tv - Stuart Blackler">
+    <meta property="og:description" content="I help .NET and DevOps engineers expand their knowledge with tips, tricks and tutorials.">
+    <meta property="og:image" content="https://codewithstu.tv/static/profile-400w.webp">
     <meta property="og:site_name" content="CodeWithStu.tv">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5e9ba1cec2.js" crossorigin="anonymous" async></script>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codewithstu.tv">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-        * {
+        *, *::before, *::after {
             padding: 0;
             border: 0;
             margin: 0;
             box-sizing: border-box;
-            font-family: 'Archivo Black', sans-serif;
         }
 
-        html,
+        html {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
         body {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            min-height: 100vh;
             background: #0a0a0a;
+            color: #f5f5f5;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* Define the grid container */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(1, 100%);
-            grid-template-rows: repeat(3, 33.3%);
-            height: 100%;
-            width: 100%;
+        /* Mesh gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% -20%, rgba(120, 80, 200, 0.25), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 0%, rgba(59, 130, 246, 0.2), transparent),
+                radial-gradient(ellipse 50% 60% at 0% 50%, rgba(168, 85, 247, 0.15), transparent),
+                radial-gradient(ellipse 40% 50% at 100% 70%, rgba(14, 165, 233, 0.15), transparent),
+                radial-gradient(ellipse 80% 40% at 50% 100%, rgba(139, 92, 246, 0.1), transparent);
         }
 
-        /* Define the grid items */
-        .grid-item {
-            font-size: 5em;
-            text-align: center;
-            background-size: 100%;
-            width: 100%;
-            height: 100%;
-            border: 1px solid #aaa
-        }
-
-        .grid-item i {
-            margin-right: 20px;
-        }
-
-        .grid a {
-            text-shadow: 10px 10px 12px #000;
-        }
-
-        .grid-item, .grid a {
+        .container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            transition: * 150ms ease-in-out;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
         }
 
-        .grid a, .grid a:visited, .grid a:link {
-            color: #efefef;
+        /* Profile Section */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #333;
+            margin-bottom: 1.25rem;
+        }
+
+        .profile h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+
+        .profile .tagline {
+            font-size: 0.9375rem;
+            color: #888;
+            font-weight: 400;
+            max-width: 480px;
+            line-height: 1.6;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: #161616;
+            border-radius: 0.5rem;
+            color: #f5f5f5;
             text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: background-color 180ms ease, transform 180ms ease;
         }
 
-        .grid-item:hover, .grid a:hover {
-            opacity: 100%;
-            background-color: #101010
+        .social-link:hover {
+            background: #222;
+            transform: scale(1.02);
         }
 
-        @media (max-width: 1650px) {
-            .grid-item {
-                font-size: 4em;
-            }
+        .social-link:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
         }
 
-        @media (max-width: 1400px) {
-            .grid-item {
-                font-size: 4em;
-            }
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            fill: currentColor;
         }
 
-        @media (max-width: 1300px) {
-            .grid-item {
-                font-size: 3em;
-            }
-            .grid-item i {
-                margin-right: 15px;
-            }
+        .social-link--linkedin:hover { color: #0A66C2; }
+        .social-link--twitter:hover { color: #1DA1F2; }
+        .social-link--github:hover { color: #fff; }
+        .social-link--youtube:hover { color: #FF0000; }
+        .social-link--patreon:hover { color: #FF424D; }
+        .social-link--website:hover { color: #10B981; }
+
+        /* Videos Section */
+        .videos {
+            width: 100%;
         }
 
-        @media (max-width: 1100px) {
-            .grid-item {
-                font-size: 2.75em;
-            }
+        .videos h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: #fff;
         }
 
-        @media (max-width: 900px) {
-            .grid-item {
-                font-size: 2.5em;
-            }
-            .grid-item i {
-                margin-right: 10px;
-            }
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
-        @media (max-width: 700px) {
-            .grid-item {
-                font-size: 2em;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .grid-item {
-                font-size: 1.75em;
-            }
-        }
-
-        a:hover .fa {
+        .video-card {
+            display: block;
+            background: #161616;
+            border-radius: 0.5rem;
+            overflow: hidden;
             text-decoration: none;
+            color: #f5f5f5;
+            transition: background-color 180ms ease, transform 180ms ease;
         }
 
-        a:hover .fa-youtube {
-            color: #FF0000;
+        .video-card:hover {
+            background: #1e1e1e;
+            transform: scale(1.01);
         }
-        a:hover .fa-rss {
-            color: #FF6719;
+
+        .video-card:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
         }
-        a:hover .fa-book-open {
-            color: rgb(60, 180, 75);
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
         }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-info h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.375rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .video-info time {
+            font-size: 0.8125rem;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+            .social-links {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 4rem 2rem;
+            }
+
+            .profile h1 {
+                font-size: 2rem;
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .video-info h3 {
+                font-size: 0.875rem;
+            }
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="grid">
-        <a href="https://youtube.com/@CodeWithStu" target="_blank"><div class="grid-item" id="dotnet"><i class="fa fa-brands fa-youtube"></i>CodeWithStu</div></a>
-        <a href="https://im5tu.io/article/" target="_blank"><div class="grid-item" id="blog"><i class="fa fa-solid fa-rss"></i>Blog</div></a>
-        <a href="https://news.codewithstu.tv" target="_blank"><div class="grid-item" id="newsletter"><i class="fa fa-solid fa-book-open"></i>Newsletter</div></a>
-    </div>
-    <div style="display: none;"><a rel="me" href="https://hachyderm.io/@codewithstu">Mastodon</a></div>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LXFBVVD7R3"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <main class="container">
+        <!-- Profile Section -->
+        <header class="profile">
+            <picture>
+                <source type="image/webp"
+                    srcset="static/profile-100w.webp 100w, static/profile-200w.webp 200w, static/profile-400w.webp 400w"
+                    sizes="150px">
+                <img src="static/profile-200w.png" alt="Stuart Blackler" width="150" height="150" class="profile-img">
+            </picture>
+            <h1>Stuart Blackler (@CodeWithStu)</h1>
+            <p class="tagline">Principal Engineer building in public. Previously CTO @ Illuvium, Principal @ Checkout.com, Lead Architect @ ClearBank</p>
+        </header>
 
-    gtag('config', 'G-LXFBVVD7R3');
-    </script>
+        <!-- Social Links -->
+        <nav class="social-links" aria-label="Social media links">
+            <a href="https://www.linkedin.com/in/codewithstu/" target="_blank" rel="noopener" class="social-link social-link--linkedin">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://x.com/CodeWithStu" target="_blank" rel="noopener" class="social-link social-link--twitter">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <span>X / Twitter</span>
+            </a>
+            <a href="https://github.com/Im5tu" target="_blank" rel="noopener" class="social-link social-link--github">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.youtube.com/@CodeWithStu" target="_blank" rel="noopener" class="social-link social-link--youtube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>YouTube</span>
+            </a>
+            <a href="https://patreon.com/CodeWithStu" target="_blank" rel="noopener" class="social-link social-link--patreon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.386.524c-4.764 0-8.64 3.876-8.64 8.64 0 4.75 3.876 8.613 8.64 8.613 4.75 0 8.614-3.864 8.614-8.613C24 4.4 20.136.524 15.386.524M.003 23.537h4.22V.524H.003"/></svg>
+                <span>Patreon</span>
+            </a>
+            <a href="https://im5tu.io" target="_blank" rel="noopener" class="social-link social-link--website">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                <span>Website</span>
+            </a>
+        </nav>
+
+        <!-- Latest Videos Section -->
+        <section class="videos" aria-labelledby="videos-heading">
+            <h2 id="videos-heading">Latest Videos</h2>
+            <div class="video-grid">
+                <!-- VIDEOS_START -->
+
+      <a href="https://www.youtube.com/watch?v=pUzFZKVlPtk" target="_blank" rel="noopener" class="video-card">
+        <img src="https://i.ytimg.com/vi/pUzFZKVlPtk/mqdefault.jpg" alt="The Smartest Way to Onboard Developers" loading="lazy" width="320" height="180">
+        <div class="video-info">
+          <h3>The Smartest Way to Onboard Developers</h3>
+          <time>Jan 1, 2024</time>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=JTmIO21KmGw" target="_blank" rel="noopener" class="video-card">
+        <img src="https://i.ytimg.com/vi/JTmIO21KmGw/mqdefault.jpg" alt="2 MUST USE features for dotnet test debugging" loading="lazy" width="320" height="180">
+        <div class="video-info">
+          <h3>2 MUST USE features for dotnet test debugging</h3>
+          <time>May 8, 2023</time>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=nPkNC1msADc" target="_blank" rel="noopener" class="video-card">
+        <img src="https://i.ytimg.com/vi/nPkNC1msADc/mqdefault.jpg" alt="Saying Hello To The Newest .NET Community - WeAreDotnet!" loading="lazy" width="320" height="180">
+        <div class="video-info">
+          <h3>Saying Hello To The Newest .NET Community - WeAreDotnet!</h3>
+          <time>Apr 27, 2023</time>
+        </div>
+      </a>
+    <!-- VIDEOS_END -->
+            </div>
+        </section>
+    </main>
+
 </body>
-
 </html>
