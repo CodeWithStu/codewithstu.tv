@@ -48,7 +48,7 @@ async function fetchVideos() {
 
   // Generate HTML for videos section
   const videosHtml = videos.map(video => `
-      <a href="${video.url}" target="_blank" rel="noopener" class="video-card">
+      <a href="${video.url}" target="_blank" rel="noopener" class="video-card" data-fast-goal="click_video" data-fast-goal-video-id="${video.id}">
         <img src="${video.thumbnail}" alt="${escapeHtml(video.title)}" loading="lazy" width="320" height="180">
         <div class="video-info">
           <h3>${escapeHtml(video.title)}</h3>
