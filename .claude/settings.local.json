@@ -6,7 +6,8 @@
       "Bash(npm install:*)",
       "Bash(npm run optimize-images:*)",
       "Bash(npm run build:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "WebFetch(domain:api.github.com)"
     ]
   }
 }

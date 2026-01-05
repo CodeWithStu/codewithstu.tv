@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/fetch-videos.js",
+    "build": "node scripts/fetch-videos.js && node scripts/fetch-repos.js",
+    "fetch:videos": "node scripts/fetch-videos.js",
+    "fetch:repos": "node scripts/fetch-repos.js",
     "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {

@@ -236,6 +236,90 @@
             color: #888;
         }
 
+        /* Repos Section */
+        .repos {
+            width: 100%;
+            margin-top: 3rem;
+        }
+
+        .repos h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: #fff;
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .repo-card {
+            display: block;
+            background: #161616;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            text-decoration: none;
+            color: #f5f5f5;
+            transition: background-color 180ms ease, transform 180ms ease;
+        }
+
+        .repo-card:hover {
+            background: #1e1e1e;
+            transform: scale(1.01);
+        }
+
+        .repo-card:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .repo-info h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .repo-desc {
+            font-size: 0.875rem;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8125rem;
+            color: #888;
+        }
+
+        .repo-lang {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .repo-lang::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--lang-color, #888);
+        }
+
+        .repo-stars {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .repo-stars svg {
+            color: #888;
+        }
+
         /* Responsive */
         @media (min-width: 480px) {
             .social-links {
@@ -258,6 +342,10 @@
 
             .video-info h3 {
                 font-size: 0.875rem;
+            }
+
+            .repo-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -336,6 +424,43 @@
         </div>
       </a>
     <!-- VIDEOS_END -->
+            </div>
+        </section>
+
+        <!-- Open Source Projects Section -->
+        <section class="repos" aria-labelledby="repos-heading">
+            <h2 id="repos-heading">Open Source Projects</h2>
+            <div class="repo-grid">
+                <!-- REPOS_START -->
+
+      <a href="https://github.com/Im5tu/goa" target="_blank" rel="noopener" class="repo-card" data-fast-goal="click_repo_goa">
+        <div class="repo-info">
+          <h3>goa</h3>
+          <p class="repo-desc">A set of modern &amp; performance AWS packages</p>
+          <div class="repo-meta">
+            <span class="repo-lang" style="--lang-color: #178600">C#</span>
+            <span class="repo-stars">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
+              1
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://github.com/Im5tu/SerializationBenchmarks" target="_blank" rel="noopener" class="repo-card" data-fast-goal="click_repo_serialization">
+        <div class="repo-info">
+          <h3>SerializationBenchmarks</h3>
+          <p class="repo-desc">Benchmarking .NET Serialization Performance</p>
+          <div class="repo-meta">
+            <span class="repo-lang" style="--lang-color: #178600">C#</span>
+            <span class="repo-stars">
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>
+              25
+            </span>
+          </div>
+        </div>
+      </a>
+    <!-- REPOS_END -->
             </div>
         </section>
     </main>

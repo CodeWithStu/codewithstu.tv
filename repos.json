@@ -1,0 +1,14 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/Im5tu/goa",
+      "description": "A set of modern & performance AWS packages",
+      "goalText": "click_repo_goa"
+    },
+    {
+      "url": "https://github.com/Im5tu/SerializationBenchmarks",
+      "description": "Benchmarking .NET Serialization Performance",
+      "goalText": "click_repo_serialization"
+    }
+  ]
+}
