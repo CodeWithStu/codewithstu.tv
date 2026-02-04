@@ -9,6 +9,11 @@
       "url": "https://github.com/Im5tu/SerializationBenchmarks",
       "description": "Benchmarking .NET Serialization Performance",
       "goalText": "click_repo_serialization"
+    },
+    {
+      "url": "https://github.com/Im5tu/dotnet-skills",
+      "description": "Agent skills specifically for .NET",
+      "goalText": "click_repo_dotnet_skills"
     }
   ]
 }
